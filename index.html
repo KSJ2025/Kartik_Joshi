@@ -1,0 +1,4530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kartik Joshi | Portfolio</title>
+
+    <meta name="description" content="Kartik Joshi - Embedded Systems, PCB Design and Software Development Portfolio">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+            --bg: #05070d;
+            --bg-soft: #0a0e17;
+            --card: rgba(14, 19, 31, 0.72);
+            --card-solid: #0e131f;
+
+            --text: #f5f7fb;
+            --muted: #9ba6b8;
+
+            --cyan: #6ee7ff;
+            --blue: #60a5fa;
+            --purple: #a78bfa;
+
+            --border: rgba(255, 255, 255, 0.09);
+
+            --shadow:
+                0 25px 80px rgba(0, 0, 0, 0.35);
+
+            --radius: 22px;
+
+            --max-width: 1180px;
+        }
+
+        body.light {
+            --bg: #f5f7fb;
+            --bg-soft: #ffffff;
+            --card: rgba(255, 255, 255, 0.92);
+            --card-solid: #ffffff;
+
+            --text: #111827;
+            --muted: #475569;
+
+            --cyan: #0891b2;
+            --blue: #2563eb;
+            --purple: #7c3aed;
+
+            --border: rgba(15, 23, 42, 0.12);
+
+            --shadow:
+                0 25px 70px rgba(15, 23, 42, 0.12);
+        }
+
+        /* Light-mode readability fixes */
+        body.light .background-grid {
+            background-image:
+                linear-gradient(rgba(15, 23, 42, 0.055) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(15, 23, 42, 0.055) 1px,
+                    transparent 1px);
+        }
+
+        body.light .project-number {
+            color: rgba(15, 23, 42, 0.22);
+        }
+
+        body.light .skill-pill,
+        body.light .tag {
+            color: #475569;
+            background: rgba(15, 23, 42, 0.035);
+            border-color: rgba(15, 23, 42, 0.12);
+        }
+
+        body.light .project-link {
+            color: #475569;
+            background: rgba(15, 23, 42, 0.025);
+        }
+
+        body.light .hero-badge {
+            color: #475569;
+        }
+
+        body.light .btn-secondary {
+            color: #111827;
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        body.light .filter-btn {
+            color: #475569;
+        }
+
+        body.light .filter-btn:hover,
+        body.light .filter-btn.active {
+            color: #06202a;
+        }
+
+        body.light .profile-core {
+            background:
+                radial-gradient(circle at 30% 25%,
+                    rgba(8, 145, 178, 0.16),
+                    transparent 40%),
+                linear-gradient(145deg,
+                    #e2e8f0,
+                    #ffffff);
+        }
+
+
+
+        /* LIGHT MODE VISIBILITY FIXES */
+        body.light .nav-links a,
+        body.light .hero-subtitle,
+        body.light .about-card p,
+        body.light .timeline-company,
+        body.light .timeline-card li,
+        body.light .project-description,
+        body.light .project li,
+        body.light .skill-pill,
+        body.light .tag,
+        body.light .project-link,
+        body.light .social-link,
+        body.light footer {
+            color: #475569;
+        }
+
+        body.light .project-number {
+            color: rgba(15, 23, 42, 0.32);
+        }
+
+        body.light .background-grid {
+            background-image:
+                linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+        }
+
+        body.light .nav-links a:hover,
+        body.light .nav-links a.active,
+        body.light .project-link:hover,
+        body.light .social-link:hover {
+            color: #0f172a;
+        }
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%,
+                    rgba(96, 165, 250, 0.12),
+                    transparent 28%),
+                radial-gradient(circle at 90% 20%,
+                    rgba(167, 139, 250, 0.10),
+                    transparent 25%),
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        .background-grid {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -5;
+
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px);
+
+            background-size: 60px 60px;
+
+            mask-image:
+                linear-gradient(to bottom,
+                    black,
+                    transparent 90%);
+        }
+
+        .orb {
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.12;
+
+            pointer-events: none;
+
+            z-index: -4;
+
+            animation: floatOrb 12s ease-in-out infinite;
+        }
+
+        .orb.one {
+            background: #00d9ff;
+
+            top: 5%;
+            left: -150px;
+        }
+
+        .orb.two {
+            background: #8b5cf6;
+
+            right: -150px;
+            top: 35%;
+
+            animation-delay: -4s;
+        }
+
+        .orb.three {
+            background: #2563eb;
+
+            bottom: -200px;
+            left: 35%;
+
+            animation-delay: -7s;
+        }
+
+        @keyframes floatOrb {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, -40px);
+            }
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(18px);
+
+            background: rgba(5, 7, 13, 0.7);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        body.light .navbar {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-container {
+            width: min(calc(100% - 40px),
+                    var(--max-width));
+
+            margin: auto;
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .logo-photo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--cyan);
+            background: var(--card-solid);
+            box-shadow:
+                0 0 0 3px rgba(110, 231, 255, 0.08),
+                0 0 22px rgba(110, 231, 255, 0.25);
+            display: block;
+        }
+
+        .logo-photo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.08);
+        }
+
+        .logo-text {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .logo-text > span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+
+            font-size: 0.86rem;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
+        }
+
+        .nav-actions {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .theme-btn,
+        .menu-btn {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            display: grid;
+
+            place-items: center;
+
+            transition: 0.25s ease;
+        }
+
+        .theme-btn:hover,
+        .menu-btn:hover {
+            border-color: var(--cyan);
+
+            transform: translateY(-2px);
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            width: min(calc(100% - 40px),
+                    var(--max-width));
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.15fr 0.85fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding-top: 100px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 8px 13px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 999px;
+
+            color: var(--muted);
+
+            font-size: 0.72rem;
+
+            margin-bottom: 24px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 15px #22c55e;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(3.1rem,
+                    7vw,
+                    6.2rem);
+
+            line-height: 0.95;
+
+            letter-spacing: -0.065em;
+
+            margin-bottom: 25px;
+        }
+
+        .gradient-text {
+            background:
+                linear-gradient(110deg,
+                    var(--cyan),
+                    var(--blue),
+                    var(--purple));
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem,
+                    2vw,
+                    1.35rem);
+
+            color: var(--muted);
+
+            max-width: 690px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 19px;
+
+            border-radius: 13px;
+
+            border: 1px solid var(--border);
+
+            font-weight: 700;
+
+            font-size: 0.84rem;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+        }
+
+        .btn-primary {
+            background:
+                linear-gradient(135deg,
+                    var(--cyan),
+                    var(--blue));
+
+            color: #031017;
+
+            border: none;
+        }
+
+        .btn-secondary {
+            background: var(--card);
+
+            color: var(--text);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+
+        .hero-visual {
+            position: relative;
+
+            display: grid;
+
+            place-items: center;
+        }
+
+        .profile-orbit {
+            width: min(390px,
+                    75vw);
+
+            aspect-ratio: 1;
+
+            border-radius: 50%;
+
+            border: 1px solid var(--border);
+
+            position: relative;
+
+            display: grid;
+
+            place-items: center;
+
+            animation: orbit 20s linear infinite;
+        }
+
+        @keyframes orbit {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-core {
+            width: 72%;
+
+            aspect-ratio: 1;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle at 30% 25%,
+                    rgba(110, 231, 255, 0.22),
+                    transparent 40%),
+                linear-gradient(145deg,
+                    #121a2b,
+                    #080c14);
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                inset 0 0 70px rgba(110, 231, 255, 0.06),
+                0 30px 80px rgba(0, 0, 0, 0.4);
+
+            display: grid;
+
+            place-items: center;
+
+            animation: reverseOrbit 20s linear infinite;
+        }
+
+        @keyframes reverseOrbit {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .core-content {
+            text-align: center;
+        }
+
+        .core-content i {
+            font-size: 2.5rem;
+
+            color: var(--cyan);
+
+            margin-bottom: 15px;
+
+            filter:
+                drop-shadow(0 0 25px rgba(110, 231, 255, 0.45));
+        }
+
+        .core-content h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 1.4rem;
+        }
+
+        /* =========================================================
+           RESPONSIVE HERO CORE
+           Keeps all text fully inside the inner circle.
+        ========================================================= */
+
+        .core-content {
+            width: 78%;
+            max-width: 280px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: visible;
+        }
+
+        .core-content i {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--cyan);
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 25px rgba(110, 231, 255, 0.45));
+            flex-shrink: 0;
+        }
+
+        .core-content h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(0.9rem, 2vw, 1.4rem);
+            line-height: 1.2;
+            text-align: center;
+            margin: 0;
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        .core-content p {
+            color: var(--muted);
+            font-size: clamp(0.58rem, 1.2vw, 0.84rem);
+            margin-top: 8px;
+            line-height: 1.35;
+            text-align: center;
+            max-width: 100%;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+        /* Tablets */
+        @media (max-width: 1000px) {
+            .profile-orbit {
+                width: min(330px, 72vw);
+            }
+
+            .profile-core {
+                width: 72%;
+            }
+
+            .core-content {
+                width: 78%;
+                max-width: 230px;
+            }
+
+            .core-content h3 {
+                font-size: clamp(0.85rem, 2.3vw, 1.15rem);
+            }
+
+            .core-content p {
+                font-size: clamp(0.58rem, 1.6vw, 0.72rem);
+            }
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .profile-orbit {
+                width: min(280px, 82vw);
+            }
+
+            .profile-core {
+                width: 72%;
+            }
+
+            .core-content {
+                width: 84%;
+                max-width: 185px;
+                padding: 5px;
+            }
+
+            .core-content i {
+                font-size: 1.8rem;
+                margin-bottom: 7px;
+            }
+
+            .core-content h3 {
+                font-size: clamp(0.72rem, 3.4vw, 0.95rem);
+                line-height: 1.2;
+            }
+
+            .core-content p {
+                font-size: clamp(0.52rem, 2.4vw, 0.66rem);
+                line-height: 1.3;
+                margin-top: 6px;
+                max-width: 100%;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 380px) {
+            .profile-orbit {
+                width: 235px;
+            }
+
+            .core-content {
+                width: 86%;
+                max-width: 165px;
+            }
+
+            .core-content i {
+                font-size: 1.55rem;
+                margin-bottom: 5px;
+            }
+
+            .core-content h3 {
+                font-size: 0.68rem;
+            }
+
+            .core-content p {
+                font-size: 0.5rem;
+                line-height: 1.25;
+                margin-top: 4px;
+            }
+
+            .orbit-dot {
+                width: 38px;
+                height: 38px;
+            }
+
+            .orbit-dot i {
+                font-size: 0.8rem;
+            }
+        }
+
+        .orbit-dot {
+            position: absolute;
+
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--card-solid);
+
+            border: 1px solid var(--border);
+
+            color: var(--cyan);
+
+            box-shadow: var(--shadow);
+        }
+
+        .orbit-dot.one {
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.two {
+            top: 14.64%;
+            left: 85.36%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.three {
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.four {
+            top: 85.36%;
+            left: 85.36%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.five {
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.six {
+            top: 85.36%;
+            left: 14.64%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.seven {
+            top: 50%;
+            left: 0%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot.eight {
+            top: 14.64%;
+            left: 14.64%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-dot i {
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        .section {
+            width: min(calc(100% - 40px),
+                    var(--max-width));
+
+            margin: auto;
+
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .eyebrow {
+            color: var(--cyan);
+
+            font-size: 0.7rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.17em;
+
+            font-weight: 800;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 12px;
+        }
+
+        .eyebrow-line {
+            width: 30px;
+            height: 1px;
+
+            background: var(--cyan);
+        }
+
+        .section-heading h2 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(2.2rem,
+                    5vw,
+                    4rem);
+
+            letter-spacing: -0.05em;
+
+            line-height: 1;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.1fr 0.9fr;
+
+            gap: 25px;
+        }
+
+        .glass {
+            background:
+                linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.055),
+                    rgba(255, 255, 255, 0.018));
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: var(--shadow);
+        }
+
+        body.light .glass {
+            background:
+                rgba(255, 255, 255, 0.75);
+        }
+
+        .about-card {
+            padding: 35px;
+        }
+
+        .about-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 1.45rem;
+
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+
+            margin-bottom: 15px;
+        }
+
+        .about-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .stat-card {
+            padding: 28px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .stat-card strong {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 2.2rem;
+
+            color: var(--cyan);
+        }
+
+        .stat-card span {
+            color: var(--muted);
+
+            font-size: 0.8rem;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 27px;
+
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(110, 231, 255, 0.25);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+                rgba(110, 231, 255, 0.08);
+
+            color: var(--cyan);
+
+            margin-bottom: 17px;
+
+            font-size: 1.15rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 13px;
+
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .skill-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+        .skill-pill,
+        .tag {
+            padding: 5px 9px;
+
+            border-radius: 999px;
+
+            border: 1px solid var(--border);
+
+            color: var(--muted);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            font-size: 0.68rem;
+        }
+
+
+        /* =========================================================
+           PROJECT FILTERS
+        ========================================================= */
+
+        .project-filters {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-bottom: 25px;
+        }
+
+        .filter-btn {
+            padding: 9px 15px;
+
+            border-radius: 999px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--muted);
+
+            cursor: pointer;
+
+            font-size: 0.73rem;
+
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: #041018;
+
+            background: var(--cyan);
+
+            border-color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+            padding: 28px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
+            animation:
+                projectIn 0.5s ease both;
+        }
+
+        @keyframes projectIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(110, 231, 255, 0.28);
+        }
+
+        .project.featured {
+            background:
+                linear-gradient(145deg,
+                    rgba(110, 231, 255, 0.075),
+                    rgba(167, 139, 250, 0.035));
+        }
+
+        .project-number {
+            position: absolute;
+
+            right: 22px;
+            top: 20px;
+
+            color: rgba(255, 255, 255, 0.18);
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 0.7rem;
+        }
+
+        .project-icon {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(110, 231, 255, 0.08);
+
+            color: var(--cyan);
+
+            font-size: 1.25rem;
+
+            margin-bottom: 18px;
+        }
+
+        .project-topline {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 12px;
+
+            margin-bottom: 8px;
+
+            min-height: 26px;
+        }
+
+        .project-label {
+            color: var(--cyan);
+
+            font-size: 0.61rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.13em;
+
+            text-transform: uppercase;
+        }
+
+        .project-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 6px 10px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 999px;
+
+            color: var(--muted);
+
+            background:
+                rgba(255, 255, 255, 0.02);
+
+            font-size: 0.66rem;
+
+            white-space: nowrap;
+
+            transition: 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--text);
+
+            border-color:
+                rgba(110, 231, 255, 0.35);
+
+            transform: translateY(-1px);
+        }
+
+        .project h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 1.22rem;
+
+            line-height: 1.25;
+
+            margin-bottom: 12px;
+
+            padding-right: 20px;
+        }
+
+        .project-description {
+            color: var(--muted);
+
+            font-size: 0.83rem;
+
+            margin-bottom: 17px;
+        }
+
+        .project-description strong {
+            color: var(--text);
+
+            font-weight: 700;
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-bottom: 18px;
+        }
+
+        .project ul {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 9px;
+        }
+
+        .project li {
+            color: var(--muted);
+
+            font-size: 0.76rem;
+
+            padding-left: 18px;
+
+            position: relative;
+        }
+
+        .project li::before {
+            content: "→";
+
+            position: absolute;
+
+            left: 0;
+
+            color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .timeline {
+            position: relative;
+
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 10px;
+
+            top: 10px;
+            bottom: 10px;
+
+            width: 1px;
+
+            background:
+                linear-gradient(to bottom,
+                    var(--cyan),
+                    transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 45px;
+
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 4px;
+            top: 5px;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            box-shadow:
+                0 0 18px rgba(110, 231, 255, 0.7);
+        }
+
+        .timeline-card {
+            padding: 28px;
+        }
+
+        .timeline-date {
+            color: var(--cyan);
+
+            font-size: 0.7rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.12em;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            color: var(--muted);
+
+            font-size: 0.82rem;
+
+            margin-bottom: 14px;
+        }
+
+        .timeline-card ul {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+        .timeline-card li {
+            color: var(--muted);
+
+            font-size: 0.8rem;
+
+            padding-left: 18px;
+
+            position: relative;
+        }
+
+        .timeline-card li::before {
+            content: "•";
+
+            position: absolute;
+
+            left: 0;
+
+            color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-card {
+            padding: 50px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr auto;
+
+            align-items: center;
+
+            gap: 40px;
+        }
+
+        .contact-card h2 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(2rem,
+                    5vw,
+                    3.5rem);
+
+            line-height: 1;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+
+            max-width: 620px;
+        }
+
+        .contact-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            display: grid;
+
+            place-items: center;
+
+            color: var(--muted);
+
+            transition: 0.25s ease;
+        }
+
+        .social-link:hover {
+            color: var(--cyan);
+
+            border-color: var(--cyan);
+
+            transform: translateY(-3px);
+        }
+
+
+
+        /* =========================================================
+           ADDITIONAL CONTACT FORM
+           Existing contact section is preserved above this form.
+        ========================================================= */
+
+        .contact-form-wrap {
+            margin-top: 28px;
+            padding: 34px;
+            display: grid;
+            grid-template-columns: 0.82fr 1.18fr;
+            gap: 42px;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding: 4px 0;
+        }
+
+        .contact-info h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+        }
+
+        .contact-info>p {
+            color: var(--muted);
+            font-size: 0.82rem;
+            margin-bottom: 20px;
+            max-width: 390px;
+        }
+
+        .contact-detail-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .contact-detail {
+            display: grid;
+            grid-template-columns: 28px 75px 1fr;
+            gap: 4px;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .contact-detail i {
+            color: var(--purple);
+            font-size: 0.95rem;
+        }
+
+        .contact-detail .detail-label {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .contact-detail .detail-value {
+            color: var(--muted);
+            word-break: break-word;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+        }
+
+        .contact-field {
+            width: 100%;
+        }
+
+        .contact-field input,
+        .contact-field textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: var(--card-solid);
+            color: var(--text);
+            border-radius: 16px;
+            padding: 14px 17px;
+            outline: none;
+            font-family: "Inter", sans-serif;
+            font-size: 0.8rem;
+            transition: 0.25s ease;
+        }
+
+        .contact-field input {
+            height: 50px;
+        }
+
+        .contact-field textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-field input::placeholder,
+        .contact-field textarea::placeholder {
+            color: var(--muted);
+            opacity: 0.85;
+        }
+
+        .contact-field input:focus,
+        .contact-field textarea:focus {
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.10);
+        }
+
+        body.light .contact-field input,
+        body.light .contact-field textarea {
+            background: #f8fafc;
+            color: #111827;
+            border-color: rgba(15, 23, 42, 0.14);
+        }
+
+        body.light .contact-field input::placeholder,
+        body.light .contact-field textarea::placeholder {
+            color: #64748b;
+        }
+
+        .contact-form-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 2px;
+        }
+
+        .contact-submit,
+        .resume-btn {
+            min-height: 50px;
+            padding: 7px 9px 7px 21px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .contact-submit {
+            border: 1px solid var(--text);
+            background: transparent;
+            color: var(--text);
+        }
+
+        .resume-btn {
+            border: 1px solid var(--purple);
+            background: transparent;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .contact-submit i,
+        .resume-btn i {
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), #6d28d9);
+            color: #fff;
+            font-size: 0.75rem;
+        }
+
+        .contact-submit:hover,
+        .resume-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.18);
+        }
+
+        .contact-submit:disabled {
+            opacity: 0.7;
+            cursor: wait;
+            transform: none;
+        }
+
+        .contact-status {
+            min-height: 20px;
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .contact-status.success {
+            color: #22c55e;
+        }
+
+        .contact-status.error {
+            color: #ef4444;
+        }
+
+        .contact-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-socials .social-link {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--card);
+        }
+
+        @media(max-width: 1000px) {
+            .contact-form-wrap {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .contact-form-wrap {
+                padding: 25px;
+            }
+
+            .contact-form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-submit,
+            .resume-btn {
+                width: 100%;
+            }
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            width: min(calc(100% - 40px),
+                    var(--max-width));
+
+            margin: auto;
+
+            padding: 30px 0 45px;
+
+            border-top: 1px solid var(--border);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: var(--muted);
+
+            font-size: 0.72rem;
+        }
+
+        footer strong {
+            color: var(--text);
+        }
+
+
+        /* =========================================================
+           SCROLL TOP
+        ========================================================= */
+
+        .scroll-top {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 13px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card-solid);
+
+            color: var(--cyan);
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(10px);
+
+            transition: 0.3s ease;
+
+            z-index: 500;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           REVEAL
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media(max-width: 1000px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding-top: 130px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .profile-orbit {
+                width: 300px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .contact-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media(max-width: 720px) {
+
+            .nav-links {
+                position: fixed;
+
+                top: 76px;
+
+                left: 20px;
+                right: 20px;
+
+                padding: 18px;
+
+                background:
+                    rgba(10, 14, 23, 0.96);
+
+                border:
+                    1px solid var(--border);
+
+                border-radius: 18px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                opacity: 0;
+
+                visibility: hidden;
+
+                transform: translateY(-10px);
+
+                transition: 0.25s ease;
+            }
+
+            body.light .nav-links {
+                background:
+                    rgba(255, 255, 255, 0.96);
+            }
+
+            .nav-links.open {
+                opacity: 1;
+
+                visibility: visible;
+
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                padding: 13px 10px;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .menu-btn {
+                display: grid;
+            }
+
+            .skills-grid,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 30px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-card {
+                padding: 30px;
+            }
+
+            footer {
+                flex-direction: column;
+
+                text-align: center;
+            }
+        }
+
+
+        @media(max-width: 480px) {
+
+            .logo-photo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo {
+                gap: 8px;
+                font-size: 1.2rem;
+            }
+
+            .nav-container,
+            .hero,
+            .section,
+            footer {
+                width:
+                    min(calc(100% - 28px),
+                        var(--max-width));
+            }
+
+            .hero h1 {
+                font-size: 3.1rem;
+            }
+
+            .profile-orbit {
+                width: 245px;
+            }
+
+            .core-content i {
+                font-size: 3.2rem;
+            }
+
+            .project {
+                padding: 23px;
+            }
+
+            .project-topline {
+                align-items: flex-start;
+            }
+
+            .project-link {
+                font-size: 0.61rem;
+
+                padding: 5px 8px;
+            }
+
+            .about-card,
+            .stat-card,
+            .skill-card {
+                padding: 23px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================= -->
+
+    <div class="background-grid"></div>
+
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                <span class="logo-photo">
+                    <img src="kartik(2).PNG" alt="Kartik Joshi">
+                </span>
+                <span class="logo-text">
+                    K<span>J</span>
+                </span>
+            </a>
+
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#home" class="active">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#skills">
+                    Skills
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content reveal">
+
+                <div class="hero-badge">
+
+                    <span class="status-dot"></span>
+
+                    Available for opportunities
+
+                </div>
+
+
+                <h1>
+
+                    Kartik
+                    <span class="gradient-text">
+                        Joshi
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-subtitle">
+
+                    Embedded Systems &amp; PCB Design
+                    enthusiast building practical hardware,
+                    automation systems and modern software
+                    applications.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#projects" class="btn btn-primary">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        Explore Projects
+
+                    </a>
+
+
+                    <a href="#contact" class="btn btn-secondary">
+
+                        <i class="fa-regular fa-paper-plane"></i>
+
+                        Let's Connect
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual reveal">
+
+                <div class="profile-orbit">
+
+                    <div class="orbit-dot one">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+
+                    <div class="orbit-dot two">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="orbit-dot three">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div class="orbit-dot four">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="orbit-dot five">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+
+                    <div class="orbit-dot six">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+
+                    <div class="orbit-dot seven">
+                        <i class="fa-solid fa-memory"></i>
+                    </div>
+
+                    <div class="orbit-dot eight">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+
+                    <div class="profile-core">
+
+                        <div class="core-content">
+
+                            <i class="fa-solid fa-microchip"></i>
+
+                            <h3>
+                                Hardware × Software
+                            </h3>
+
+                            <p>
+                                Build&nbsp;•&nbsp;Test&nbsp;•&nbsp;Improve&nbsp;•&nbsp;Explore
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section class="section" id="about">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">
+
+                    <span class="eyebrow-line"></span>
+
+                    About Me
+
+                </p>
+
+                <h2>
+
+                    Engineering with
+                    <span class="gradient-text">
+                        purpose
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="about-grid reveal">
+
+                <div class="glass about-card">
+
+                    <h3>
+                        Building from circuit to application.
+                    </h3>
+
+                    <p>
+
+                        I am a versatile Software and Embedded Systems Engineer with a proven track record of designing
+                        and delivering end-to-end technology solutions that bridge the physical and digital worlds. With
+                        nearly two years of professional experience, I am skilled in the complete lifecycle of product
+                        development, from firmware and hardware integration to scalable full-stack web applications and
+                        cloud-connected data pipelines.
+                    </p>
+
+                    <p>
+
+                        I possess deep hardware and firmware knowledge, with hands-on experience in Embedded C, STM32,
+                        ESP32, and ARM Cortex-M platforms. I am adept at microcontroller programming, sensor
+                        integration, PCB design, and hardware debugging.
+
+                    </p>
+
+                    <p>
+
+                        On the software side, I build high-performance, data-driven web applications using Python, Java,
+                        and React.js, creating interactive dashboards and robust REST APIs that process and visualize
+                        high-volume datasets with exceptional efficiency.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-stats">
+
+                    <div class="glass stat-card">
+
+                        <strong>
+                            20+
+                        </strong>
+
+                        <span>
+                            Designed 20+ production PCBs (2L/4L) with 95% first-pass success, specializing in signal
+                            integrity, EMI/EMC, and noise suppression for IoT/industrial systems.
+                        </span>
+
+                    </div>
+
+
+                    <div class="glass stat-card">
+
+                        <strong>
+                            5+
+                        </strong>
+
+                        <span>
+                            Professional custom PCB design (2L/4L, 95% first-pass) with expertise in signal integrity,
+                            EMI/EMC, and noise suppression for IoT/industrial systems.
+                        </span>
+
+                    </div>
+
+                    <div class="glass stat-card">
+
+                        <strong>
+                            8+ Centers
+                        </strong>
+
+                        <span>
+                            Conducted IoT and microcontroller training across 8+ GTTC centers, covering STM32, ESP32,
+                            Arduino, sensor interfacing, and real-time data monitoring.
+                        </span>
+
+                    </div>
+
+                    <div class="glass stat-card">
+
+                        <strong>
+                            15+ lab setups
+                        </strong>
+
+                        <span>
+                            Established 15+ lab setups across 8+ GTTC centers with oscilloscopes, multimeters, power
+                            supplies, and microcontrollers for hands-on embedded training.
+                        </span>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section class="section" id="skills">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">
+
+                    <span class="eyebrow-line"></span>
+
+                    Skills
+
+                </p>
+
+                <h2>
+
+                    Technical
+                    <span class="gradient-text">
+                        toolkit
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="glass skill-card reveal">
+
+                    <div class="skill-icon">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                    </div>
+
+                    <h3>
+                        Embedded Systems
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill-pill">
+                            Internet of Things (IoT)
+                        </span>
+
+                        <span class="skill-pill">
+                            ARM Cortex-M
+                        </span>
+
+                        <span class="skill-pill">
+                            Microcontrollers
+                        </span>
+
+                        <span class="skill-pill">
+                            Raspberry Pi 5
+                        </span>
+
+                        <span class="skill-pill">
+                            PWM
+                        </span>
+
+                        <span class="skill-pill">
+                            Sensors
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass skill-card reveal">
+
+                    <div class="skill-icon">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                    </div>
+
+                    <h3>
+                        Communication Protocols
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill-pill">
+                            CAN Protocol
+                        </span>
+
+                        <span class="skill-pill">
+                            Ethernet
+                        </span>
+
+                        <span class="skill-pill">
+                            UART
+                        </span>
+
+                        <span class="skill-pill">
+                            SPI
+                        </span>
+
+                        <span class="skill-pill">
+                            I2C
+                        </span>
+
+                        <span class="skill-pill">
+                            HTTP
+                        </span>
+
+                        <span class="skill-pill">
+                            Wi-Fi
+                        </span>
+
+                        <span class="skill-pill">
+                            Bluetooth
+                        </span>
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass skill-card reveal">
+
+                    <div class="skill-icon">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                    </div>
+
+                    <h3>
+                        PCB &amp; Electronics
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill-pill">
+                            PCB Layout
+                        </span>
+
+                        <span class="skill-pill">
+                            EasyEDA
+                        </span>
+
+                        <span class="skill-pill">
+                            2-Layer
+                        </span>
+
+                        <span class="skill-pill">
+                            4-Layer
+                        </span>
+
+                        <span class="skill-pill">
+                            BOM
+                        </span>
+
+                        <span class="skill-pill">
+                            EMI/EMC
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass skill-card reveal">
+
+                    <div class="skill-icon">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill-pill">
+                            Java
+                        </span>
+
+                        <span class="skill-pill">
+                            JavaScript
+                        </span>
+
+                        <span class="skill-pill">
+                            Python
+                        </span>
+
+                        <span class="skill-pill">
+                            SQL
+                        </span>
+
+                        <span class="skill-pill">
+                            Embedded C
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass skill-card reveal">
+
+                    <div class="skill-icon">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill-pill">
+                            React.js
+                        </span>
+
+                        <span class="skill-pill">
+                            JavaScript
+                        </span>
+
+                        <span class="skill-pill">
+                            Flask
+                        </span>
+
+                        <span class="skill-pill">
+                            HTML
+                        </span>
+
+                        <span class="skill-pill">
+                            CSS
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glass skill-card reveal">
+
+                    <div class="skill-icon">
+
+                        <i class="fa-solid fa-database"></i>
+
+                    </div>
+
+                    <h3>
+                        Databases
+                    </h3>
+
+                    <div class="skill-list">
+
+                        <span class="skill-pill">
+                            MySQL
+                        </span>
+
+                        <span class="skill-pill">
+                            MongoDB
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section class="section" id="projects">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">
+
+                    <span class="eyebrow-line"></span>
+
+                    Selected Work
+
+                </p>
+
+                <h2>
+
+                    Projects that
+                    <span class="gradient-text">
+                        matter
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="project-filters reveal">
+
+                <button class="filter-btn active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter-btn" data-filter="hardware">
+                    Hardware
+                </button>
+
+                <button class="filter-btn" data-filter="software">
+                    Software
+                </button>
+
+                <button class="filter-btn" data-filter="frontend">
+                    Frontend
+                </button>
+
+
+            </div>
+
+
+            <div class="project-grid" id="projectGrid">
+
+
+                <!-- =================================================
+                     PROJECT 01
+                ================================================== -->
+
+                <article class="glass project featured reveal" data-category="hardware">
+
+                    <span class="project-number">
+                        01
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Hardware Design
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Custom PCB Design &amp;
+                        Customer Solutions
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Designed and completed
+                        <strong>
+                            20+ custom PCB designs
+                        </strong>
+                        based on customer requirements,
+                        including IoT sensor, relay-control
+                        and application-specific hardware.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            PCB Layout
+                        </span>
+
+                        <span class="tag">
+                            2-Layer
+                        </span>
+
+                        <span class="tag">
+                            4-Layer
+                        </span>
+
+                        <span class="tag">
+                            EasyEDA
+                        </span>
+
+                        <span class="tag">
+                            BOM
+                        </span>
+
+                        <span class="tag">
+                            EMI/EMC
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Converted customer requirements
+                            into schematic and practical
+                            PCB layouts.
+                        </li>
+
+                        <li>
+                            Applied power-integrity,
+                            signal-integrity and EMI/EMC
+                            considerations.
+                        </li>
+
+                        <li>
+                            Created 5+ custom boards
+                            professionally with 95%
+                            first-pass success.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 02
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="hardware">
+
+                    <span class="project-number">
+                        02
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Embedded Robotics
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Application Controlled
+                        Robotic Arm
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Microcontroller-based 6-DOF
+                        robotic arm regulated through
+                        a web application.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            PWM
+                        </span>
+
+                        <span class="tag">
+                            L298N
+                        </span>
+
+                        <span class="tag">
+                            Wireless
+                        </span>
+
+                        <span class="tag">
+                            Oscilloscope
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Achieved ±1° positioning accuracy
+                            for pick-and-place operations.
+                        </li>
+
+                        <li>
+                            Reached a 15-meter wireless
+                            control range with 98%
+                            command success.
+                        </li>
+
+                        <li>
+                            Implemented motor-control
+                            drivers and validated PWM
+                            signal integrity.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 03
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="hardware">
+
+                    <span class="project-number">
+                        03
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-solar-panel"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Smart Agriculture
+                        </span>
+
+
+                        <a class="project-link" href="https://github.com/KSJ2025/SolarGrow" target="_blank"
+                            rel="noopener">
+
+                            GitHub
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <h3>
+                        Solar-Grow
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Solar-powered smart agriculture
+                        system for off-grid agricultural
+                        automation.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            IoT
+                        </span>
+
+                        <span class="tag">
+                            Sensors
+                        </span>
+
+                        <span class="tag">
+                            Relay
+                        </span>
+
+                        <span class="tag">
+                            Automation
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Enabled 100% off-grid
+                            agricultural operation.
+                        </li>
+
+                        <li>
+                            Achieved less than 15 ms
+                            irrigation response latency
+                            using soil-moisture sensing.
+                        </li>
+
+                        <li>
+                            Reduced water usage by 30–35%
+                            through automated drip irrigation.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 04
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="hardware">
+
+                    <span class="project-number">
+                        04
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-house-signal"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Automation
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Home Automation System
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Embedded system combining hardware,
+                        PCB development and real-time
+                        control firmware.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Embedded C
+                        </span>
+
+                        <span class="tag">
+                            PCB
+                        </span>
+
+                        <span class="tag">
+                            PIR
+                        </span>
+
+                        <span class="tag">
+                            LDR
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Implemented firmware with less
+                            than 10 ms latency for sensor
+                            processing.
+                        </li>
+
+                        <li>
+                            Used opto-isolated relays for
+                            safe 230V AC appliance switching.
+                        </li>
+
+                        <li>
+                            Achieved 25–35% energy savings
+                            through sensor-based automation.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 05
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="hardware">
+
+                    <span class="project-number">
+                        05
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Healthcare IoT
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Patient Vital Signs
+                        Monitoring System
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Healthcare-oriented embedded
+                        monitoring prototype built with
+                        Raspberry Pi 5.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Raspberry Pi 5
+                        </span>
+
+                        <span class="tag">
+                            MAX30100
+                        </span>
+
+                        <span class="tag">
+                            DS18B20
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Integrated SpO₂, heart-rate
+                            and temperature sensors.
+                        </li>
+
+                        <li>
+                            Achieved less than 10 ms
+                            sensor-read latency.
+                        </li>
+
+                        <li>
+                            Alerting reduced simulated
+                            response time by approximately
+                            35%.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 06
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="frontend">
+
+                    <span class="project-number">
+                        06
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Frontend Analytics
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Enterprise Analytics &amp;
+                        Interactive Reporting Platform
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Interactive analytics frontend built with
+                        HTML, CSS, JavaScript and SQL-oriented
+                        data structures for reporting and dashboards.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            JavaScript
+                        </span>
+
+                        <span class="tag">
+                            SQL
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Built interactive analytics dashboards using React.js, HTML, CSS, and JavaScript,
+                            processing.
+                        </li>
+
+                        <li>
+                            Built dynamic chart layouts,
+                            real-time filtering and
+                            automated CSV/PDF export.
+                        </li>
+
+                        <li>
+                            Designed SQL-oriented data views
+                            for efficient reporting and structured records.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 07
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="software">
+
+                    <span class="project-number">
+                        07
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Productivity App
+                        </span>
+
+
+                        <a class="project-link" href="https://github.com/KSJ2025/To-Do-List" target="_blank"
+                            rel="noopener">
+
+                            GitHub
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <h3>
+                        To-Do List Application
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Task-management application focused
+                        on everyday productivity with
+                        persistent task state.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            JavaScript
+                        </span>
+
+                        <span class="tag">
+                            Local Storage
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Add, edit, complete and delete
+                            tasks with local persistence.
+                        </li>
+
+                        <li>
+                            Supports All, Active and
+                            Completed filters.
+                        </li>
+
+                        <li>
+                            Includes drag-and-drop reordering
+                            and theme switching.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 08
+                ================================================== -->
+
+                <article class="glass project featured reveal" data-category="software">
+
+                    <span class="project-number">
+                        08
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Finance Application
+                        </span>
+
+
+                        <a class="project-link" href="https://github.com/KSJ2025/Expense_Tracker" target="_blank"
+                            rel="noopener">
+
+                            GitHub
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <h3>
+                        Expense Tracker
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Dashboard-style personal finance
+                        application with tracking,
+                        budgeting and analytics views.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            JavaScript
+                        </span>
+
+                        <span class="tag">
+                            Chart.js
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Expense/income ledger with
+                            search, filtering and
+                            export functionality.
+                        </li>
+
+                        <li>
+                            Includes budgets, loans,
+                            wallet, accounts and settings.
+                        </li>
+
+                        <li>
+                            Provides spending and
+                            income-vs-expense insight charts.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 09
+                ================================================== -->
+
+                <article class="glass project reveal" data-category="frontend">
+
+                    <span class="project-number">
+                        09
+                    </span>
+
+
+                    <div class="project-icon">
+
+                        <i class="fa-solid fa-diagram-project"></i>
+
+                    </div>
+
+
+                    <div class="project-topline">
+
+                        <span class="project-label">
+                            Frontend Development
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Multi-Tenant Task &amp;
+                        Workflow Management System
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        Frontend workflow interface built with
+                        HTML, CSS, JavaScript and SQL-oriented
+                        data structures for enterprise task management.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            JavaScript
+                        </span>
+
+                        <span class="tag">
+                            SQL
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Created responsive task boards and
+                            interactive workflow screens.
+                        </li>
+
+                        <li>
+                            Created responsive drag-and-drop task boards with React.js supporting 1,000+ active task
+                            cards, reducing project status update overhead by 30%.
+                        </li>
+
+                        <li>
+                            Implemented filtering, status views and
+                            user-friendly task management interactions.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section class="section" id="experience">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">
+
+                    <span class="eyebrow-line"></span>
+
+                    Experience
+
+                </p>
+
+                <h2>
+
+                    Professional
+                    <span class="gradient-text">
+                        journey
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item reveal">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="glass timeline-card">
+
+                        <div class="timeline-date">
+                            Professional Experience
+                        </div>
+
+                        <h3>
+                            Abhyudyaya Techno Solutions Pvt. Ltd.
+                        </h3>
+
+                        <div class="timeline-company">
+                            Embedded Software Engineer | June 2024 - June 2026
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Developed, optimized, and maintained data-driven IoT backends and dynamic web reporting
+                                dashboards
+                                handling 50+ active telemetry endpoints.
+                            </li>
+
+                            <li>
+                                Designed relational database schemas with 15+ normalized tables and wrote complex SQL
+                                queries in
+                                MySQL to manage high-volume datasets.
+                            </li>
+
+                            <li>
+                                Engineered modular components, HTML, CSS, and JavaScript interfaces, enabling real-time
+                                status monitoring and analytics dashboards.
+                            </li>
+
+                            <li>
+                                Created 5+ custom PCBs (2-layer & 4-layer) for IoT sensors and relay controls with 95%
+                                first-pass success
+                                working with design teams.
+                            </li>
+
+                            <li>
+                                Worked on IoT-based healthcare and automation systems, improving system reliability and
+                                real-time
+                                monitoring capabilities.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item reveal">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="glass timeline-card">
+
+                        <div class="timeline-date">
+                            Java Full Stack Internship
+                        </div>
+
+                        <h3>
+                            Java Full Stack Developer Intern
+                        </h3>
+
+                        <div class="timeline-company">
+                            KodNest – Dream Factory 2024
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Successfully completed intensive training in Full Stack Web Development.
+                            </li>
+
+                            <li>
+                                Worked on Java, HTML, CSS, JavaScript, MySQL, and backend integration concepts.
+                            </li>
+
+                            <li>
+                                Gained hands-on experience in building dynamic web applications using full stack
+                                architecture.
+                            </li>
+
+                            <li>
+                                Developed understanding of RESTful services, database connectivity, and application
+                                deployment.
+                            </li>
+
+                            <li>
+                                Strengthened problem-solving and software development lifecycle (SDLC) knowledge.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item reveal">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="glass timeline-card">
+
+                        <div class="timeline-date">
+                            Embbedded Systems Training
+                        </div>
+
+                        <h3>
+                            Embedded Full Stack IoT Training
+                        </h3>
+
+                        <div class="timeline-company">
+                            Government Tool Room and Training Centre | Hubballi
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Completed hands-on training in end-to-end IoT system development.
+                            </li>
+
+                            <li>
+                                Worked on sensor integration, microcontrollers, and cloud connectivity.
+                            </li>
+
+                            <li>
+                                Gained experience in embedded firmware, hardware interfacing, and real-time data
+                                monitoring.
+                            </li>
+
+                            <li>
+                                Developed practical IoT applications involving data acquisition, processing, and
+                                automation.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item reveal">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="glass timeline-card">
+
+                        <div class="timeline-date">
+                            Embedded System Developer Internship
+                        </div>
+
+                        <h3>
+                            Embedded System Developer Virtual Intern
+                        </h3>
+
+                        <div class="timeline-company">
+                            AICTE – EduSkills (Supported by Microchip) • April 2024 – June 2024
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Completed a 10-week virtual internship in Embedded Systems, focusing on
+                                microcontroller-based real-time
+                                applications using Microchip PIC, AVR, and ARM platforms.
+                            </li>
+
+                            <li>
+                                Hands-on experience in Embedded C programming, peripheral interfacing (UART, SPI, I2C,
+                                ADC, PWM),
+                                and embedded system debugging and testing.
+                            </li>
+
+                            <li>
+                                Implemented mini embedded projects involving sensor interfacing, communication
+                                protocols, circuit design,
+                                simulation, and hardware–software co-design.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item reveal">
+
+                    <span class="timeline-dot"></span>
+
+                    <div class="glass timeline-card">
+
+                        <div class="timeline-date">
+                            VLSI Design Internship
+                        </div>
+
+                        <h3>
+                            Takshila Institute of VLSI Technologies
+                        </h3>
+
+                        <div class="timeline-company">
+                            Analog Layout Design Intern | 2025
+                        </div>
+
+                        <ul>
+
+                            <li>
+                                Worked on custom analog layouts strictly adhering to foundry design rules, ensuring DRC-
+                                and LVS-clean
+                                physical verification using Cadence tools.
+                            </li>
+
+                            <li>
+                                Applied common-centroid, interdigitation, and symmetry-based layout techniques to
+                                minimize device mismatch,
+                                gradient effects, and systematic variations in analog blocks.
+                            </li>
+
+
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section class="section" id="contact">
+
+            <!-- EXISTING CONTACT CARD - KEPT -->
+            <div class="glass contact-card reveal">
+
+                <div>
+                    <p class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        Contact
+                    </p>
+
+                    <h2>
+                        Let's build
+                        <span class="gradient-text">
+                            something useful.
+                        </span>
+                    </h2>
+
+                    <p>
+                        Interested in embedded systems,
+                        PCB design, automation or software
+                        development? Let's connect.
+                    </p>
+                </div>
+
+
+
+            </div>
+
+            <!-- NEW DETAILED CONTACT AREA -->
+            <div class="glass contact-form-wrap reveal">
+
+                <div class="contact-info">
+                    <h3>Get in touch</h3>
+
+                    <p>
+                        Have a project, job opportunity, PCB requirement,
+                        embedded systems idea or software requirement?
+                        Send me a message and I will get back to you.
+                    </p>
+
+                    <div class="contact-detail-list">
+
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">Hubballi, Karnataka</span>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">kartikjoshi2025@gmail.com</span>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-phone"></i>
+                            <span class="detail-label">Mobile</span>
+                            <span class="detail-value">+91 9986762025</span>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-globe"></i>
+                            <span class="detail-label">Languages</span>
+                            <span class="detail-value">English, Kannada, Hindi</span>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://github.com/KSJ2025" target="_blank" rel="noopener" class="social-link"
+                            aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="mailto:kartikjoshi2025@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/kartiksjoshi24/" target="_blank" rel="noopener"
+                            class="social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!--
+                    FormSubmit sends the form to:
+                    kartikjoshi2025@gmail.com
+
+                    <form action="https://formsubmit.co/your@email.com" method="POST" />
+                -->
+                <form class="contact-form" id="contactForm"
+                    action="https://formsubmit.co/kartikjoshi2025@gmail.com" method="POST" >
+
+                    <input type="hidden" name="_subject" value="New Portfolio Contact - Kartik Joshi">
+
+                    <!-- Reply directly to the person who filled the form -->
+                    <input type="hidden" name="_replyto" value="">
+
+                    <input type="hidden" name="_template" value="table">
+
+                    <!-- Honeypot spam field -->
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+                    <div class="contact-form-row">
+
+                        <div class="contact-field">
+                            <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+                        </div>
+
+                        <div class="contact-field">
+                            <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-field">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+
+                    <div class="contact-field">
+                        <textarea name="message" placeholder="Write your message..." required></textarea>
+                    </div>
+
+                    <div class="contact-form-actions">
+
+                        <button type="submit" class="contact-submit" id="contactSubmit">
+                            <span>Submit</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+
+                        <a href="https://drive.google.com/drive/folders/131ztb870SF_WjLpW--un_6NrjF0GavK3?usp=drive_link"
+                            class="resume-btn" download aria-label="Download Resume">
+                            <span>Resume</span>
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="contact-status" id="contactStatus" aria-live="polite"></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div>
+            © <span id="year"></span>
+            Kartik Joshi.
+            All rights reserved.
+        </div>
+
+    
+
+    </footer>
+
+
+    <!-- SCROLL TOP -->
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /* =========================================================
+           YEAR
+        ========================================================= */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        menuBtn.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.toggle("open");
+
+                const icon =
+                    menuBtn.querySelector("i");
+
+                if (
+                    navLinks.classList.contains("open")
+                ) {
+
+                    icon.className =
+                        "fa-solid fa-xmark";
+
+                } else {
+
+                    icon.className =
+                        "fa-solid fa-bars";
+
+                }
+
+            }
+        );
+
+
+        /* Close mobile menu after clicking */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove("open");
+
+                        menuBtn
+                            .querySelector("i")
+                            .className =
+                            "fa-solid fa-bars";
+
+                    }
+                );
+
+            });
+
+
+        /* =========================================================
+           THEME
+        ========================================================= */
+
+        const themeBtn =
+            document.getElementById("themeBtn");
+
+        const savedTheme =
+            localStorage.getItem("portfolio-theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light");
+
+            themeBtn.innerHTML =
+                '<i class="fa-solid fa-sun"></i>';
+
+        }
+
+
+        themeBtn.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle("light");
+
+                const isLight =
+                    document.body.classList.contains("light");
+
+                localStorage.setItem(
+                    "portfolio-theme",
+                    isLight
+                        ? "light"
+                        : "dark"
+                );
+
+                themeBtn.innerHTML =
+                    isLight
+                        ? '<i class="fa-solid fa-sun"></i>'
+                        : '<i class="fa-solid fa-moon"></i>';
+
+            }
+        );
+
+
+        /* =========================================================
+           PROJECT FILTER
+        ========================================================= */
+
+        const filterButtons =
+            document.querySelectorAll(
+                ".filter-btn"
+            );
+
+        const projects =
+            document.querySelectorAll(
+                ".project"
+            );
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    filterButtons.forEach(
+                        btn =>
+                            btn.classList.remove(
+                                "active"
+                            )
+                    );
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    const filter =
+                        button.dataset.filter;
+
+
+                    projects.forEach(
+                        project => {
+
+                            const category =
+                                project.dataset.category;
+
+
+                            if (
+                                filter === "all" ||
+                                category === filter
+                            ) {
+
+                                project.style.display =
+                                    "block";
+
+                                project.style.animation =
+                                    "projectIn .45s ease both";
+
+                            } else {
+
+                                project.style.display =
+                                    "none";
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            element =>
+                revealObserver.observe(element)
+        );
+
+
+        /* =========================================================
+           ACTIVE NAVIGATION
+        ========================================================= */
+
+        const sections =
+            document.querySelectorAll(
+                "section[id]"
+            );
+
+        const navItems =
+            document.querySelectorAll(
+                ".nav-links a"
+            );
+
+
+        const navObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                navItems.forEach(
+                                    link =>
+                                        link.classList.remove(
+                                            "active"
+                                        )
+                                );
+
+
+                                const active =
+                                    document.querySelector(
+                                        `.nav-links a[href="#${entry.target.id}"]`
+                                    );
+
+
+                                if (active) {
+
+                                    active.classList.add(
+                                        "active"
+                                    );
+
+                                }
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    rootMargin:
+                        "-35% 0px -55% 0px"
+                }
+            );
+
+
+        sections.forEach(
+            section =>
+                navObserver.observe(section)
+        );
+
+
+        /* =========================================================
+           SCROLL TOP
+        ========================================================= */
+
+        const scrollTop =
+            document.getElementById(
+                "scrollTop"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (window.scrollY > 600) {
+
+                    scrollTop.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    scrollTop.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        scrollTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =========================================================
+           MOUSE PARALLAX
+        ========================================================= */
+
+        const heroVisual =
+            document.querySelector(
+                ".hero-visual"
+            );
+
+
+        if (
+            window.matchMedia(
+                "(pointer:fine)"
+            ).matches
+        ) {
+
+            document.addEventListener(
+                "mousemove",
+                event => {
+
+                    const x =
+                        (event.clientX /
+                            window.innerWidth -
+                            0.5) * 10;
+
+                    const y =
+                        (event.clientY /
+                            window.innerHeight -
+                            0.5) * 10;
+
+
+                    heroVisual.style.transform =
+                        `translate(${x}px, ${y}px)`;
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           CONTACT FORM - EMAIL SUBMISSION
+           AJAX submission: stays on this page and shows a popup.
+        ========================================================= */
+
+        const contactForm = document.getElementById("contactForm");
+        const contactSubmit = document.getElementById("contactSubmit");
+        const contactStatus = document.getElementById("contactStatus");
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                if (!contactForm.checkValidity()) {
+                    contactForm.reportValidity();
+                    return;
+                }
+
+                const originalButton = contactSubmit.innerHTML;
+                contactSubmit.disabled = true;
+                contactSubmit.innerHTML =
+                    '<span>Sending...</span>' +
+                    '<i class="fa-solid fa-spinner fa-spin"></i>';
+
+                contactStatus.textContent = "Sending your message...";
+                contactStatus.className = "contact-status";
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+
+                    // Allow you to reply directly to the visitor.
+                    data._replyto = data.email;
+
+                    const response = await fetch(
+                        "https://formsubmit.co/ajax/kartikjoshi2025@gmail.com",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Accept": "application/json"
+                            },
+                            body: JSON.stringify(data)
+                        }
+                    );
+
+                    // FormSubmit may return different success payloads depending
+                    // on the response format. A successful HTTP response means
+                    // the submission was accepted without redirecting the visitor.
+                    if (!response.ok) {
+                        let errorMessage = "Unable to submit form";
+                        try {
+                            const errorResult = await response.json();
+                            errorMessage = errorResult.message || errorMessage;
+                        } catch (_) {}
+                        throw new Error(errorMessage);
+                    }
+
+                    contactStatus.textContent =
+                        "Thank you! Your message has been submitted successfully.";
+                    contactStatus.className = "contact-status success";
+
+                    // Friendly popup — the visitor stays on the portfolio.
+                    alert("Thank you! Your message has been submitted successfully.\n\nI will get back to you soon.");
+
+                    contactForm.reset();
+
+                } catch (error) {
+                    console.error("Contact form error:", error);
+
+                    contactStatus.textContent =
+                        "Message could not be sent. Please try again or email kartikjoshi2025@gmail.com directly.";
+                    contactStatus.className = "contact-status error";
+
+                    alert("Sorry, the message could not be submitted. Please try again.");
+                } finally {
+                    contactSubmit.disabled = false;
+                    contactSubmit.innerHTML = originalButton;
+                }
+            });
+        }
+
+        /* =========================================================
+           KEYBOARD ACCESSIBILITY
+        ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    navLinks.classList.remove(
+                        "open"
+                    );
+
+                    menuBtn
+                        .querySelector("i")
+                        .className =
+                        "fa-solid fa-bars";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
